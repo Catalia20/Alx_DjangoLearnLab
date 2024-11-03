@@ -1,0 +1,21 @@
+from bookshel.models import Book
+book = Book.objects.create(title="1984",author="George Orwell", publication_year1949)
+book #Display the created book
+<Book: Book object (1)>
+
+retrive.md
+book = Book.objects.get(id=1)
+book.title, book.author, book.publication_year
+('1984', 'George Orwell', 1949)
+update.md
+book = Book.objects.get(id=1)
+book.title = "Ninteen Eighty_Four"
+book.save()
+book.title # Display the updated title
+'Ninteen Eighty-Four'
+
+delete.md
+book = Book.obhects.get(id=1)
+book.delete()
+Book.objects.all() #Confirm deletion
+<QuerySet []>
